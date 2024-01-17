@@ -72,4 +72,6 @@ console.log(rickAndMortyCharacters[4]);
 rickAndMortyCharacters.splice(1,1);;
 console.log(rickAndMortyCharacters);
 
+
 //-----------Iteración #5: Condicionales
+
