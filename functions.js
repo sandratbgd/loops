@@ -110,10 +110,112 @@ function averageWord(arr) {
     }
   }
 
-    sumAverage = count++ + sum
-    average = sumAverage/arr.length
-    return average
+    sumAverage = (sum + count++) / arr.length
+    return sumAverage
 }
 
 const result = averageWord(mixedElements);
 console.log(result);
+
+/* Iteración #6: Valores únicos
+Crea una función que reciba por parámetro un array y compruebe si existen elementos duplicados, 
+en caso que existan los elimina para retornar un array sin los elementos duplicados. 
+*/
+
+const duplicates = [
+  'sushi',
+  'pizza',
+  'burger',
+  'potatoe',
+  'pasta',
+  'ice-cream',
+  'pizza',
+  'chicken',
+  'onion rings',
+  'pasta',
+  'soda'
+];
+
+function removeDuplicates(array) {
+  const uniqueArray = [];
+
+  for (const item of array) {
+    if (!uniqueArray.includes(item)) {
+      uniqueArray.push(item);
+    }
+  }
+
+  return uniqueArray;
+}
+
+const resultado = removeDuplicates(duplicates);
+console.log(resultado);
+
+/* **Iteración #7: Buscador de nombres**
+
+Comprueba si existe un elemento en el array, en caso que existan nos devuelve un true 
+y la posición de dicho elemento y por la contra un false. 
+*/
+const nameFinder = [
+  'Peter',
+  'Steve',
+  'Tony',
+  'Natasha',
+  'Clint',
+  'Logan',
+  'Xabier',
+  'Bruce',
+  'Peggy',
+  'Jessica',
+  'Marc'
+];
+
+function finderName(name) {
+  if (nameFinder.includes(name)) {
+    return `${true}, ${name} ocupa la posición ${nameFinder.indexOf(name) + 1}`;
+    
+  } else {
+    return false;
+  }
+}
+console.log(finderName('Marc')); 
+console.log(finderName('Charlie'));
+
+
+/*Iteration #8: Contador de repeticiones**
+Crea una función que nos devuelva el número de veces que se repite 
+cada una de las palabras que lo conforma.  
+*/
+
+const counterWords = [
+  'code',
+  'repeat',
+  'eat',
+  'sleep',
+  'code',
+  'enjoy',
+  'sleep',
+  'code',
+  'enjoy',
+  'upgrade',
+  'code'
+];
+
+function repeatCounter(counterWords) {
+  const counter = {};
+
+  for (const word of counterWords) {
+    if (counter[word]) {
+      
+      counter[word]++;
+    } else {
+      // Si la palabra no está en el contador, agrega la palabra al contador con un contador de 1
+      counter[word] = 1;
+    }
+  }
+
+  return counter;
+}
+
+const contador = repeatCounter(counterWords);
+console.log(contador);

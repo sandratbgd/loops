@@ -94,4 +94,4 @@ const toysNoCat = [];
     
     console.log(toysNoCat);
 
-    //---------Iteración#6
+  
